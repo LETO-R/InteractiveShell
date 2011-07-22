@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InteractiveShell</name>
+    </assembly>
+    <members>
+        <member name="T:InteractiveShell.InteractiveShellBase">
+            <summary>
+            Base InteractiveShell class.
+            
+            Implement / override the required methods.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.OnAutoComplete(System.String)">
+            <summary>
+            Called when the user presses the 'tab' key. Return a not-null value to override the currently set input.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.OnRun">
+            <summary>
+            Called before the main run loop starts.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.OnHalt">
+            <summary>
+            Called when the main run loop ends.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.OnEnter(System.String)">
+            <summary>
+            Called when the user presses the 'enter' key to accept the input.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.ChangeInput(System.String)">
+            <summary>
+            Change the input. The cursor position will be automaticly set to the max.
+            </summary>
+            <param name="input">New input.</param>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.OnHandleKey(System.ConsoleKey)">
+            <summary>
+            Called when a key is pressed. Return true to prevent the default behavior.
+            </summary>
+            <param name="key">Pressed key.</param>
+            <returns>True to disable to default behavior, false otherwise.</returns>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.Run">
+            <summary>
+            Run the interactive shell. Will not return until Halt() is called.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.RenderInitial">
+            <summary>
+            Render the initial shell.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.InteractiveShellBase.Render">
+            <summary>
+            Render the shell.
+            </summary>
+        </member>
+        <member name="P:InteractiveShell.InteractiveShellBase.ShellPrefix">
+            <summary>
+            Get the shell prefix. Will be printed before any user input.
+            </summary>
+        </member>
+        <member name="P:InteractiveShell.InteractiveShellBase.IsRunning">
+            <summary>
+            Is the interactive shell running?
+            </summary>
+        </member>
+        <member name="P:InteractiveShell.InteractiveShellBase.Input">
+            <summary>
+            Current user input.
+            </summary>
+        </member>
+        <member name="P:InteractiveShell.InteractiveShellBase.PreviousRender">
+            <summary>
+            Previous rendered line (ShellPrefix + input) 
+            </summary>
+        </member>
+        <member name="P:InteractiveShell.InteractiveShellBase.InputPosition">
+            <summary>
+            Current text cursor position (starts after the ShellPrefix).
+            </summary>
+        </member>
+        <member name="T:InteractiveShell.Utils.Glob">
+            <summary>
+            Glob matching utility methods.
+            </summary>
+        </member>
+        <member name="M:InteractiveShell.Utils.Glob.Match(System.String,System.String)">
+            <summary>
+            Match the input versus the specified pattern (pattern can include ? and * to match)
+            </summary>
+            <param name="input">Input string.</param>
+            <param name="pattern">Glob pattern.</param>
+            <returns>True when it matches, false otherwise.</returns>
+        </member>
+    </members>
+</doc>
